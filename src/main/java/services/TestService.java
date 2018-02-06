@@ -1,5 +1,6 @@
 package services;
 
+import launch.Application;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -51,7 +52,7 @@ public class TestService extends Scenario {
      * Login
      */
 
-    this.loginService.login("maxime.leprince@bioserenity.com","sdfsdfsdf");
+  this.loginService.login(Application.CONFIG.getProperty("username"),Application.CONFIG.getProperty("password"));
     this.wait(2);
 
     /**
