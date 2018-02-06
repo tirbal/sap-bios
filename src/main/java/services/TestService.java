@@ -12,64 +12,41 @@ import java.util.concurrent.TimeUnit;
 
 
 /**
- * 
  * @author ThierryBARTHEL
- *
  */
 public class TestService extends Scenario {
-  /**
-   * 
-   */
-  private final Logger logger = LoggerFactory.getLogger(TestService.class);
-
-  WebDriver driver = new ChromeDriver();
-
-  String url = "https://my335712.sapbydesign.com/sap/public/ap/ui/repository/SAP_UI/HTMLOBERON5/client.html?client_type=html&app.component=/SAP_UI_CT/Main/root.uiccwoc&rootWindow=X&redirectUrl=/sap/public/ap/ui/runtime";
-
-  /**
-   * 
-   */
-  TestAction testAction = new TestAction();
-
-  LoginService loginService = new LoginService(url,driver);
-
-  TimetableService timetableService = new TimetableService(driver);
-
-  /**
-   * 
-   */
-  public void launchScenarioTest() {
-    logger.info("launch scenario test");
 
 
-    testAction.clickOnThis(driver);
-  }
-
-  @Override
-  public boolean launch() {
+    String url = "https://my335712.sapbydesign.com/sap/public/ap/ui/repository/SAP_UI/HTMLOBERON5/client.html?client_type=html&app.component=/SAP_UI_CT/Main/root.uiccwoc&rootWindow=X&redirectUrl=/sap/public/ap/ui/runtime";
 
     /**
-     * Login
+     *
      */
 
-  this.loginService.login(Application.CONFIG.getProperty("username"),Application.CONFIG.getProperty("password"));
-    this.wait(2);
+    LoginService loginService = new LoginService(url,Application.CONFIG.getProperty("username"), Application.CONFIG.getProperty("password"));
 
-    /**
-     * Go to timetable
-     */
-    this.timetableService.open();
-
-    return true;
-  }
+    TimetableService timetableService = new TimetableService(driver);
 
 
+    @Override
+    public boolean launch() {
+
+        /**
+         * Login
+         */
+
+        logger.info("Login");
+
+        this.loginService.launch();
+
+        /**
+         * Go to timetable
+         */
+        logger.info("Go to timetable ");
+        this.timetableService.open();
 
 
-  void wait(int seconds) {
-    driver.manage().timeouts().implicitlyWait(seconds, TimeUnit.SECONDS);
-  }
-
-
+        return true;
+    }
 
 }
