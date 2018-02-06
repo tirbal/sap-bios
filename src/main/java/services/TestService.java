@@ -51,7 +51,7 @@ public class TestService extends Scenario {
      * Login
      */
 
-    this.loginService.login("maxime.leprince@bioserenity.com","114li212Fiu");
+    this.loginService.login("maxime.leprince@bioserenity.com","sdfsdfsdf");
     this.wait(2);
 
     /**
