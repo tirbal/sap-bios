@@ -33,7 +33,7 @@ public class TestService extends Scenario {
 
 
     @Override
-    public boolean launch() {
+    public boolean launch() throws Exception {
 
         /**
          * Login
@@ -49,6 +49,8 @@ public class TestService extends Scenario {
         logger.info("Go to timetable ");
         this.timetableService.launch();
 
+
+        Thread.sleep(10000);
         this.driver.close();
 
 
