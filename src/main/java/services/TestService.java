@@ -26,6 +26,8 @@ public class TestService extends Scenario {
 
     TimetableService timetableService = new TimetableService(driver);
 
+    DateService dateService = new DateService(url, driver, Application.CONFIG.getProperty("start.date"), Application.CONFIG.getProperty("end.date"));
+
 
     @Override
     public boolean launch() throws Exception {
@@ -49,6 +51,7 @@ public class TestService extends Scenario {
         logger.info("Go to timetable ");
         this.timetableService.launch();
 
+        this.dateService.launch();
 
         Thread.sleep(10000);
         this.driver.close();
