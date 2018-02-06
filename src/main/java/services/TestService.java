@@ -1,6 +1,7 @@
 package services;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,7 +19,7 @@ public class TestService extends Scenario {
    */
   private final Logger logger = LoggerFactory.getLogger(TestService.class);
 
-  WebDriver driver = new FirefoxDriver();
+  WebDriver driver = new ChromeDriver();
 
   /**
    * 
