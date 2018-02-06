@@ -16,9 +16,9 @@ public class TimetableService extends BaseService {
         this.wait(1);
         driver.findElement(By.cssSelector("#__item33 > div.sapBUiCenterMnuItemText")).click();
         //driver.get(this.url);
-        this.wait(5);
+        this.wait(7);
         driver.findElement(By.cssSelector("#__link24")).click();
-        this.wait(5);
+        this.wait(7);
         return false;
     }
 
