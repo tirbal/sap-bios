@@ -1,15 +1,10 @@
 package services;
 
 import launch.Application;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import actions.TestAction;
-
-import java.util.concurrent.TimeUnit;
 
 
 /**
@@ -34,6 +29,11 @@ public class TestService extends Scenario {
 
     @Override
     public boolean launch() throws Exception {
+
+
+        driver.manage().window().setPosition(new Point(0,0));
+        driver.manage().window().setSize(new Dimension(1400,768));
+
 
         /**
          * Login

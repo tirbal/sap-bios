@@ -21,4 +21,12 @@ public class TimetableService extends BaseService {
         this.wait(5);
         return false;
     }
+
+
+
+    void save() {
+        this.driver.findElement(new By.ByXPath("//*[contains(text(), 'Save')]")).click();
+    }
+
+
 }
