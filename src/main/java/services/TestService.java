@@ -49,6 +49,8 @@ public class TestService extends Scenario {
         logger.info("Go to timetable ");
         this.timetableService.launch();
 
+        this.driver.close();
+
 
         return true;
     }

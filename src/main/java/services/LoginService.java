@@ -30,7 +30,7 @@ public class LoginService extends BaseService {
         driver.findElement(By.id("__control0-pass-inner")).clear();
         driver.findElement(By.id("__control0-pass-inner")).sendKeys(password);
         driver.findElement(By.id("__control0-logonBtn")).click();
-        this.wait(2);
+        this.wait(10);
         return true;
     }
 }
