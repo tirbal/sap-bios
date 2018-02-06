@@ -4,6 +4,7 @@ import launch.Application;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import actions.TestAction;
@@ -23,7 +24,10 @@ public class TestService extends Scenario {
      *
      */
 
-    LoginService loginService = new LoginService(url,Application.CONFIG.getProperty("username"), Application.CONFIG.getProperty("password"));
+    WebDriver driver = new ChromeDriver();
+
+
+    LoginService loginService = new LoginService(driver,url,Application.CONFIG.getProperty("username"), Application.CONFIG.getProperty("password"));
 
     TimetableService timetableService = new TimetableService(driver);
 
@@ -43,7 +47,7 @@ public class TestService extends Scenario {
          * Go to timetable
          */
         logger.info("Go to timetable ");
-        this.timetableService.open();
+        this.timetableService.launch();
 
 
         return true;

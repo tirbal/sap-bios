@@ -1,15 +1,19 @@
 package services;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
-public class LoginService extends Scenario {
+public class LoginService extends BaseService {
 
     String url;
     String login;
     String password;
 
-    public LoginService(String url,String login, String password)
+    public LoginService(WebDriver driver,String url, String login, String password)
     {
+
+        super(driver);
+
         this.url = url;
         this.login = login;
         this.password = password;
@@ -17,7 +21,7 @@ public class LoginService extends Scenario {
 
 
     @Override
-    public boolean launch() {
+    public boolean launch()  {
         driver.get(this.url);
         driver.findElement(By.id("__control0")).click();
         driver.findElement(By.id("__control0")).click();
@@ -26,8 +30,7 @@ public class LoginService extends Scenario {
         driver.findElement(By.id("__control0-pass-inner")).clear();
         driver.findElement(By.id("__control0-pass-inner")).sendKeys(password);
         driver.findElement(By.id("__control0-logonBtn")).click();
-        this.wait(10);
-
+        this.wait(2);
         return true;
     }
 }
