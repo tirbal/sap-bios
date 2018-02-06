@@ -14,7 +14,13 @@ public abstract  class BaseService  extends Scenario {
 
 
     void wait(int seconds) {
-        driver.manage().timeouts().implicitlyWait(seconds, TimeUnit.SECONDS);
+        try {
+            Thread.sleep(seconds * 1000);
+        }
+        catch(Exception e) {
+
+        }
+        //driver.manage().timeouts().implicitlyWait(seconds, TimeUnit.SECONDS);
     }
 
 }
