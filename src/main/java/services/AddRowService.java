@@ -27,4 +27,9 @@ public class AddRowService extends BaseService {
         this.addRow("","");
         return true;
     }
+
+
+    WebElement getInput(WebElement webElement) {
+       return  webElement.findElement(By.tagName("input"));
+    }
 }
