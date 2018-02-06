@@ -7,5 +7,5 @@ public abstract class Scenario {
   public final Logger logger = LoggerFactory.getLogger(this.getClass().getName());
 
 
-  abstract public boolean launch();
+  abstract public boolean launch() throws Exception;
 }

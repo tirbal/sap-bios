@@ -24,7 +24,7 @@ public class Application {
    * 
    * @param args
    */
-  public static void main(String[] args) {
+  public static void main(String[] args) throws Exception {
     //
     System.out.println("Hello SAP");
     System.setProperty("webdriver.chrome.driver", CONFIG.getProperty("chrome.driver.path")); // "src/main/resources/chromedriver.exe");
